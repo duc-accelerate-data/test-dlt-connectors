@@ -15,7 +15,7 @@
 | Phase 4c — Data tests (with tier pick) | 2026-05-16 | ✅ Complete: Tier 1, 9/9 data tests passing |
 | Phase 4d — Validation (fixture replay) | 2026-05-16 | N/A for ingestion |
 | Phase 4d.5 — Audit | 2026-05-16 | ✅ Complete: All quality checks passed |
-| Phase 4e — Contract authoring (pinning) | | In progress |
+| Phase 4e — Contract authoring (pinning) | 2026-05-16 | ✅ Complete: Schema frozen (columns/data_type/tables) |
 | Phase 4f — Code review | | |
 | Phase 5a — Schema delta approval | | |
 | Phase 5b — Documentation | | |
