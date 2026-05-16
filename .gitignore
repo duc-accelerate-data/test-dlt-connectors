@@ -6,10 +6,20 @@ logs/
 
 # Python
 *.pyc
+*.pyo
 __pycache__/
+*.egg-info/
 .venv/
 venv/
+dist/
+build/
 .env
+
+# Secrets — never commit
+.dlt/secrets.toml
+credentials.json
+*.key
+*.pem
 
 # Spark / Livy
 .livy-session-id.txt
@@ -26,4 +36,11 @@ intent-state.json
 vd-domain.yml
 
 # Local data / runtime outputs
-data/
+/data/
+
+# Exception: allow test data directories
+!tests/data/
+
+# OS
+.DS_Store
+Thumbs.db
