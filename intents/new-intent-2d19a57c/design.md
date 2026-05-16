@@ -18,7 +18,7 @@
 | Phase 4e — Contract authoring (pinning) | 2026-05-16 | ✅ Complete: Schema frozen (columns/data_type/tables) |
 | Phase 4f — Code review | | |
 | Phase 5a — Schema delta approval | | |
-| Phase 5b — Documentation | | |
+| Phase 5b — Documentation | 2026-05-16 | ✅ Complete: YAML schema docs populated |
 | Phase 5e — PR Workflow | | |
 
 ## Pipeline Inventory

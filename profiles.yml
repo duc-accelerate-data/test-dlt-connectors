@@ -1,0 +1,17 @@
+vd1887_search_0516t105339:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "./data/prod.duckdb"
+      schema: main
+      threads: 4
+      attach:
+        - path: "/Users/duc/Documents/accelerate_data/worktrees/feature/vd-1887-vd-1888-connector-search-and-resources/data/domains/vd1887-search-0516t105339/prod.duckdb"
+          alias: domain
+          read_only: true
+    prod:
+      type: duckdb
+      path: "/Users/duc/Documents/accelerate_data/worktrees/feature/vd-1887-vd-1888-connector-search-and-resources/data/domains/vd1887-search-0516t105339/prod.duckdb"
+      schema: main
+      threads: 4
