@@ -1,0 +1,46 @@
+# dbt build artifacts
+**/target/
+dbt_packages/
+logs/
+*.log
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.env
+
+# Secrets — never commit
+.dlt/secrets.toml
+credentials.json
+*.key
+*.pem
+
+# Spark / Livy
+.livy-session-id.txt
+
+# IDE
+.vscode/
+.idea/
+
+# VD Studio
+.claude/
+intent-state.json
+
+# Generated per-environment by vd-studio (machine-specific paths)
+vd-domain.yml
+
+# Local data / runtime outputs
+/data/
+
+# Exception: allow test data directories
+!tests/data/
+
+# OS
+.DS_Store
+Thumbs.db

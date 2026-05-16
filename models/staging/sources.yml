@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: notion
+    description: "Raw notion data landed by dlt pipeline"
+    schema: "src_abc_2"
+    tables: []

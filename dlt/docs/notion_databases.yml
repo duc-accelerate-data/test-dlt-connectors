@@ -1,0 +1,56 @@
+resource: notion_databases
+source: notion
+target_table: src_abc_2.<database_title>
+write_disposition: replace
+schema_contract: freeze/freeze/freeze
+incremental_cursor: null
+description: "Auto-discovers and loads all accessible Notion databases. Each database yields a separate table named by its title. Full refresh on each run."
+fields:
+  - name: id
+    type: VARCHAR
+    nullable: false
+    description: "Notion-assigned unique identifier (primary key)"
+  - name: object
+    type: VARCHAR
+    nullable: true
+    description: "Notion object type (always 'database' for database entries)"
+  - name: created_time
+    type: TIMESTAMP WITH TIME ZONE
+    nullable: true
+    description: "Database entry creation timestamp"
+  - name: last_edited_time
+    type: TIMESTAMP WITH TIME ZONE
+    nullable: true
+    description: "Last modification timestamp"
+  - name: in_trash
+    type: BOOLEAN
+    nullable: true
+    description: "Whether entry is in trash"
+  - name: is_archived
+    type: BOOLEAN
+    nullable: true
+    description: "Whether entry is archived"
+  - name: is_locked
+    type: BOOLEAN
+    nullable: true
+    description: "Whether entry is locked for editing"
+  - name: url
+    type: VARCHAR
+    nullable: true
+    description: "Public URL to the Notion page"
+  - name: archived
+    type: BOOLEAN
+    nullable: true
+    description: "Archived status (duplicate of is_archived)"
+  - name: properties__*
+    type: VARIANT
+    nullable: true
+    description: "Dynamic properties based on database schema. Pattern: properties__{property_name}__{field}. Child tables created for nested structures."
+notes:
+  - "Dynamic table names derived from Notion database titles at runtime"
+  - "Primary key: id (auto-assigned by Notion)"
+  - "Schema frozen (freeze/freeze/freeze) to prevent drift - new columns require schema evolution review"
+  - "Write disposition: replace (full refresh, no incremental strategy)"
+  - "3 databases currently loaded: tasks (10,000 rows), tasks_tracker (12 rows), untitled_2e982b21 (1 row)"
+  - "Child tables created for nested properties (arrays, rich text): 6 child tables total"
+  - "_dlt_id and _dlt_load_id columns added automatically by dlt framework"

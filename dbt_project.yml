@@ -1,0 +1,25 @@
+name: 'vd1887_search_0516t105339'
+version: '1.0.0'
+config-version: 2
+
+profile: 'vd1887_search_0516t105339'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  vd1887_search_0516t105339:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
