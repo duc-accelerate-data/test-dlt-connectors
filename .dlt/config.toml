@@ -1,0 +1,8 @@
+[sources.abc_2.notion]
+
+[studio.sources.abc_2]
+connector = "notion"
+connector_source = "dlt-verified"
+schema = "src_abc_2"
+auth_method = "default"
+created_at = "2026-05-16T05:25:13.561Z"
